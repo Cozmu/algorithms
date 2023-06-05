@@ -5,7 +5,7 @@ def study_schedule(permanence_period, target_time):
     for time_one, time_two in permanence_period:
         if not isinstance(time_one, int) or not isinstance(time_two, int):
             return None
-        if time_one[0] <= target_time <= time_two[1]:
+        if time_one <= target_time <= time_two:
             student_accountant += 1
 
     return student_accountant
