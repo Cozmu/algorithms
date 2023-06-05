@@ -1,6 +1,6 @@
 def merge_word(word):
     if len(word) <= 1:
-        return word
+        return word.lower()
 
     mid = len(word) // 2
     left_half = word[:mid]
@@ -28,17 +28,18 @@ def merge(left, right):
     merged += right[right_index:]
     return merged.lower()
 
+
 def is_anagram(first_string, second_string):
     first_word = merge_word(first_string)
     second_word = merge_word(second_string)
-    if not first_string or not second_string:
-        return (first_string, second_string, False)
+    if not first_word or not second_word:
+        return (first_word, second_word, False)
     if first_word != second_word:
         return (first_word, second_word, False)
     return (first_word, second_word, True)
 
 
-primeira = "dCba"
-segunda = "cabd"
+primeira = "muro"
+segunda = ""
 
 print(is_anagram(primeira, segunda))
