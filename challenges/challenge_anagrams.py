@@ -37,9 +37,3 @@ def is_anagram(first_string, second_string):
     if first_word != second_word:
         return (first_word, second_word, False)
     return (first_word, second_word, True)
-
-
-primeira = "muro"
-segunda = ""
-
-print(is_anagram(primeira, segunda))

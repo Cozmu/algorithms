@@ -2,13 +2,10 @@ def study_schedule(permanence_period, target_time):
     student_accountant = 0
     if not target_time or type(permanence_period) != list:
         return None
-    for student in permanence_period:
-        for time in student:
-            if not isinstance(time, int):
-                return None
-        if student[0] <= target_time <= student[1]:
+    for time_one, time_two in permanence_period:
+        if not isinstance(time_one, int) or not isinstance(time_two, int):
+            return None
+        if time_one[0] <= target_time <= time_two[1]:
             student_accountant += 1
 
     return student_accountant
-
-print(study_schedule([(2, 2), (1, 2), (2, 3), (1, 5), (4, 5), (4, 5)], 5))
